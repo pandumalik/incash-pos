@@ -1,0 +1,93 @@
+{
+    "users": [
+        {
+            "id": "ADM-001",
+            "username": "admin",
+            "password": "password123",
+            "name": "Admin User",
+            "role": "admin"
+        },
+        {
+            "id": "CSH-002",
+            "username": "cashier",
+            "password": "password123",
+            "name": "Jane Cashier",
+            "role": "cashier"
+        }
+    ],
+    "products": [
+        {
+            "id": "1",
+            "name": "Wireless Headphones",
+            "sku": "WH-001",
+            "barcode": "123456789",
+            "category": "Electronics",
+            "price": 99.99,
+            "cost": 60.00,
+            "stock": 15,
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+        },
+        {
+            "id": "2",
+            "name": "Smart Watch",
+            "sku": "SW-002",
+            "barcode": "987654321",
+            "category": "Electronics",
+            "price": 149.99,
+            "cost": 90.00,
+            "stock": 8,
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+        },
+        {
+            "id": "3",
+            "name": "Cotton T-Shirt",
+            "sku": "TS-003",
+            "barcode": "456123789",
+            "category": "Fashion",
+            "price": 19.99,
+            "cost": 5.00,
+            "stock": 50,
+            "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"
+        },
+        {
+            "id": "4",
+            "name": "Ceramic Mug",
+            "sku": "CM-004",
+            "barcode": "111222333",
+            "category": "Home",
+            "price": 12.99,
+            "cost": 3.00,
+            "stock": 25,
+            "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400"
+        },
+        {
+            "id": "5",
+            "name": "Running Shoes",
+            "sku": "RS-005",
+            "category": "Sports",
+            "price": 89.99,
+            "cost": 45.00,
+            "stock": 12,
+            "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+        },
+        {
+            "id": "6",
+            "name": "Gaming Mouse",
+            "sku": "GM-006",
+            "category": "Electronics",
+            "price": 49.99,
+            "cost": 25.00,
+            "stock": 30,
+            "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400"
+        }
+    ],
+    "categories": [
+        "Electronics",
+        "Fashion",
+        "Home",
+        "Sports",
+        "Books",
+        "Toys"
+    ],
+    "transactions": []
+}
