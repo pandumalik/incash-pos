@@ -39,4 +39,4 @@
 # generated native folders
 **/ios
 **/android
-**/*.af
+*.af
