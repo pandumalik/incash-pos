@@ -1,5 +1,5 @@
 # InCash-POS
-
+![incash-logo](./incash-mobile/screenshot/banner.png)
 ## 1. What is InCash-POS?
 
 InCash-POS is a modern, cross-platform Point of Sales (POS) application built with React Native. It is designed to be an "offline-first" solution, ensuring that retail and F&B (Food & Beverage) businesses can continue operations smoothly even without an internet connection. The app focuses on speed, simplicity, and reliable data synchronization, creating a seamless checkout experience for cashiers and powerful insights for business owners.
