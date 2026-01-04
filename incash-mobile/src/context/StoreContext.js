@@ -6,8 +6,8 @@ const StoreContext = createContext();
 export const StoreProvider = ({ children }) => {
     const [inventory, setInventory] = useState(MOCK_INVENTORY);
     const [cart, setCart] = useState([]);
-    const [user, setUser] = useState(null); // { name, id, role, lastLogin }
-    const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+    const [user, setUser] = useState(null);
+    const [viewMode, setViewMode] = useState('grid');
 
     const login = (userData) => {
         setUser({
@@ -21,7 +21,7 @@ export const StoreProvider = ({ children }) => {
     };
 
     const addToInventory = (item) => {
-        // Generate simple ID
+
         const newItem = { ...item, id: Date.now().toString() };
         setInventory((prev) => [newItem, ...prev]);
     };
@@ -67,7 +67,7 @@ export const StoreProvider = ({ children }) => {
     };
 
     const checkout = () => {
-        // Deduct stock
+
         setInventory(prevInv => {
             return prevInv.map(item => {
                 const cartItem = cart.find(c => c.id === item.id);

@@ -19,7 +19,7 @@ export default function AddItemScreen() {
     const { addToInventory, updateInventoryItem } = useStore();
     const { colors } = useTheme();
 
-    // Check if editing
+
     const editingItem = route.params?.item;
     const isEditMode = !!editingItem;
 
@@ -45,12 +45,12 @@ export default function AddItemScreen() {
                 cost: editingItem.cost ? editingItem.cost.toString() : '',
                 image: editingItem.image
             });
-            navigation.setOptions({ title: 'Edit Item' }); // If using native header
+            navigation.setOptions({ title: 'Edit Item' });
         }
     }, [editingItem]);
 
     const pickImage = async () => {
-        // No permissions request is necessary for launching the image library
+
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
             allowsEditing: true,
@@ -105,12 +105,12 @@ export default function AddItemScreen() {
                 keyboardVerticalOffset={100}
             >
                 <ScrollView contentContainerStyle={styles.content}>
-                    {/* Header Title for custom UI if needed, otherwise rely on Nav */}
+
                     <Text variant="h1" style={{ marginBottom: spacing.m }}>
                         {isEditMode ? 'Edit Item' : 'Add New Item'}
                     </Text>
 
-                    {/* Photo Placeholder */}
+
                     <TouchableOpacity style={[styles.photoUpload, { backgroundColor: colors.border, borderColor: colors.border }]} onPress={pickImage}>
                         {form.image ? (
                             <Image source={{ uri: form.image }} style={{ width: '100%', height: '100%', borderRadius: 12 }} resizeMode="cover" />
@@ -219,7 +219,7 @@ export default function AddItemScreen() {
                         </View>
                     </View>
 
-                    {/* Spacer for keyboard */}
+
                     <View style={{ height: 100 }} />
 
                 </ScrollView>
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
         marginRight: spacing.s,
     },
     chipActive: {
-        // backgroundColor: colors.primary, // managed inline
+
     },
     chipText: {
         fontWeight: '500',

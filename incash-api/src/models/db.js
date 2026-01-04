@@ -30,7 +30,7 @@ class JSONDB {
         }
     }
 
-    // Generic methods
+
     get(collectionName) {
         return this.data[collectionName] || [];
     }

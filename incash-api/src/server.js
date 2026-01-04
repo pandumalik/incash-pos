@@ -12,9 +12,9 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// Routes
 
-// Auth
+
+
 app.post('/auth/login', (req, res) => {
     const { username, password } = req.body;
     const user = db.get('users').find(u => u.username === username && u.password === password);
@@ -27,7 +27,7 @@ app.post('/auth/login', (req, res) => {
     }
 });
 
-// Products
+
 app.get('/products', (req, res) => {
     const { category, search } = req.query;
     let products = db.get('products');
@@ -81,12 +81,12 @@ app.delete('/products/:id', (req, res) => {
     }
 });
 
-// Categories
+
 app.get('/categories', (req, res) => {
     res.json(db.get('categories'));
 });
 
-// Transactions
+
 app.get('/transactions', (req, res) => {
     res.json(db.get('transactions'));
 });
@@ -137,17 +137,14 @@ app.post('/transactions', (req, res) => {
     res.status(201).json(transaction);
 });
 
-// Users
+
 app.get('/users', (req, res) => {
     const users = db.get('users').map(({ password, ...u }) => u);
     res.json(users);
 });
 
 app.get('/users/current', (req, res) => {
-    // Return a random user for now as per "Implement Random User Login" request context if needed, 
-    // or just the first one. 
-    // The previous context "Implement Random User Login" mentioned modifying the API.
-    // I'll implementing returning a random user.
+
     const users = db.get('users');
     const randomUser = users[Math.floor(Math.random() * users.length)];
     const { password, ...safeUser } = randomUser;

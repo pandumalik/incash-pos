@@ -19,9 +19,9 @@ export default function CashierScreen() {
     const [showScanner, setShowScanner] = useState(false);
     const [isCartExpanded, setIsCartExpanded] = useState(false);
 
-    const cartAnim = useRef(new Animated.Value(0)).current; // 0 = collapsed, 1 = expanded
+    const cartAnim = useRef(new Animated.Value(0)).current;
 
-    // Pan Responder for Swiping
+    // Pan Responder
     const panResponder = useRef(
         PanResponder.create({
             onMoveShouldSetPanResponder: (_, gestureState) => {
@@ -32,19 +32,18 @@ export default function CashierScreen() {
                 const { dy } = gestureState;
                 // Swipe Up (negative dy) -> Expand
                 if (dy < -50 && !isCartExpanded) {
-                    toggleCart(true); // Force expand
+                    toggleCart(true);
                 }
                 // Swipe Down (positive dy) -> Collapse
                 else if (dy > 50 && isCartExpanded) {
-                    toggleCart(false); // Force collapse
+                    toggleCart(false);
                 }
-                // Determine logic based on threshold?
-                // For now simple triggers are enough. 
+
             },
         })
     ).current;
 
-    // ... items filter ...
+
     const filteredItems = inventory.filter(i =>
         i.name.toLowerCase().includes(search.toLowerCase()) ||
         i.sku.toLowerCase().includes(search.toLowerCase()) ||
@@ -60,7 +59,6 @@ export default function CashierScreen() {
     }, [cart]);
 
     const toggleCart = (forceState) => {
-        // If forceState is provided, use it. Otherwise toggle.
         const nextState = forceState !== undefined ? forceState : !isCartExpanded;
 
         Animated.spring(cartAnim, {
@@ -72,7 +70,7 @@ export default function CashierScreen() {
         setIsCartExpanded(nextState);
     };
 
-    // ... handleScan, useEffect ...
+
     const handleScan = ({ data }) => {
         const item = inventory.find(i => i.barcode === data || i.sku === data);
         if (item) {
@@ -141,7 +139,7 @@ export default function CashierScreen() {
 
     const renderCartItem = ({ item }) => (
         <View style={styles.cartItem}>
-            {/* ... */}
+
             <Image source={{ uri: item.image }} style={[styles.cartImage, { backgroundColor: colors.background }]} />
             <View style={{ flex: 1, marginLeft: 12 }}>
                 <Text style={{ fontWeight: '600' }}>{item.name}</Text>
@@ -261,7 +259,7 @@ export default function CashierScreen() {
                         <View style={styles.cartHeader}>
                             <View>
                                 <Text variant="h3">Current Order</Text>
-                                {/* Simplified Summary specifically requested */}
+
                                 <Text variant="caption" style={{ marginTop: 2 }}>
                                     {totalItemsCount} Total Items
                                 </Text>
